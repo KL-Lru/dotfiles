@@ -1,0 +1,16 @@
+#!/bin/bash -e
+
+if [ -n "$(command -v pyenv)" ]; then
+  echo "pyenv is already installed"
+  exit 0
+fi
+
+echo "installing pyenv"
+
+git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+echo "pyenv is installed"

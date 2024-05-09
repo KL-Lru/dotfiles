@@ -1,0 +1,18 @@
+#!/bin/bash -e
+
+if [ -n "$(command -v rbenv)" ]; then
+  echo "rbenv is already installed"
+  exit 0
+fi
+
+echo "installing rbenv"
+
+git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+
+export RBENV_ROOT="$HOME/.rbenv"
+export PATH="$RBENV_ROOT/bin:$PATH"
+eval "$(rbenv init - bash)"
+
+git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)/plugins/ruby-build"
+
+echo "rbenv is installed"

@@ -1,0 +1,18 @@
+#!/bin/bash -e
+
+if [ -n "$(command -v nodenv)" ]; then
+  echo "nodenv is already installed"
+  exit 0
+fi
+
+echo "installing nodenv"
+
+git clone https://github.com/nodenv/nodenv.git ~/.nodenv
+
+export NODENV_ROOT="$HOME/.nodenv"
+export PATH="$NODENV_ROOT/bin:$PATH"
+eval "$(nodenv init -)"
+
+git clone https://github.com/nodenv/node-build.git "$(nodenv root)/plugins/node-build"
+
+echo "nodenv is installed"

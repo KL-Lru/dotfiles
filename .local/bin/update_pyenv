@@ -1,0 +1,7 @@
+#!/bin/bash -e 
+
+if [ -n "$(command -v pyenv)" ]; then
+  git -C ${PYENV_ROOT} pull origin master
+fi
+
+echo "pyenv is updated"

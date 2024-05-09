@@ -1,0 +1,8 @@
+#!/bin/bash -e
+
+if [ -n "$(command -v nodenv)" ]; then
+  git -C ${NODENV_ROOT} pull origin master
+  git -C ${NODENV_ROOT}/plugins/node-build pull origin master
+fi
+
+echo "nodenv is updated"

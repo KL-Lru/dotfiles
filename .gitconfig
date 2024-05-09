@@ -1,0 +1,47 @@
+[user]
+	# email =
+	# name =
+[alias]
+	s = status --short
+	c = commit
+	b = branch
+	l = log --pretty=oneline -n 20 --abbrev-commit
+	d = diff
+
+	pl = pull
+	ps = push
+	sw = switch
+	rs = restore
+
+	ref = reflog
+	rbs = rebase
+	sts = stash
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[core]
+	# use vim
+	editor = vim
+	# use lf always
+	eol = lf
+	autocrlf = false
+[help]
+	# auto execute command when typo
+	autocorrect = 30
+[init]
+	# use main as default branch
+	defaultBranch = main
+[merge]
+	# always --no-ff
+  ff = false
+[pull]
+	# fast forward only
+	ff = only
+[push]
+	# explicit push only allowed
+	default = nothing
+[fetch]
+	# prune local branch when remote branch is deleted
+  prune = true

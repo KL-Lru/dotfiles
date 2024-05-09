@@ -1,0 +1,8 @@
+#!/bin/bash -e 
+
+if [ -n "$(command -v rbenv)" ]; then
+  git -C ${RBENV_ROOT} pull origin master
+  git -C ${RBENV_ROOT}/plugins/ruby-build pull origin master
+fi
+
+echo "rbenv is updated"
